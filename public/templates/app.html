@@ -1,0 +1,13 @@
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+  <a class="navbar-brand" href="#">FutureProof1606.js</a>
+  <ul class="nav navbar-nav">
+    <li class="nav-item" [class.active]="isActive(['Examples'])">
+      <a class="nav-link" [routerLink]="['Examples']">Examples</a>
+    </li>
+    <li class="nav-item" [class.active]="isActive(['About'])">
+      <a class="nav-link"  [routerLink]="['About']">About</a>
+    </li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>
+

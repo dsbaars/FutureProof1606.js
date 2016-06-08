@@ -1,0 +1,69 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Express with decorators</h3>
+<highlight>import * as web from 'express-decorators';
+
+@web.controller('/api')
+export default class ApiController {
+  @web.get('/')
+  testAction(req, res) {
+    res.send('respond with a test');
+  }
+}
+      </highlight>
+      <h3>Angular 2, ES7 and decorators</h3>
+      <highlight>import 'zone.js';
+import 'reflect-metadata';
+import { bootstrap } from '@angular/platform-browser-dynamic';
+
+import "bootstrap/css/bootstrap.css!"
+
+import { AppComponent } from './app.component';
+
+bootstrap(AppComponent);
+      </highlight>
+    </div>
+
+    <div class="col-sm-8">
+      <h3>Angular 2, ES7 and decorators (2)</h3>
+      <highlight>import { Component } from '@angular/core';
+import { RouteConfig, Router, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
+import { Inject, Injectable } from '@angular/core';
+
+import { DashboardComponent } from './dashboard/dashboard';
+import { AboutComponent } from './about/about';
+import { HighlightDirective } from './highlight.directive';
+
+
+@Component({
+  selector: 'app',
+  templateUrl: '/templates/app.html',
+  directives: [ROUTER_DIRECTIVES],
+  providers: [
+    ROUTER_PROVIDERS
+  ]
+})
+@RouteConfig([
+  { path: '/', name: 'Dashboard', component: DashboardComponent, useAsDefault: true },
+  { path: '/about', name: 'About', component: AboutComponent }
+])
+@Injectable()
+export class AppComponent {
+  static get parameters() {
+    return [[Router]];
+  }
+
+  constructor(router) {
+    this.router = router;
+  }
+
+  isActive(instruction) {
+    return this.router.isRouteActive(this.router.generate(instruction));
+  }
+}
+      </highlight>
+    </div>
+  </div>
+</div>
+
