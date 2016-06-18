@@ -3,7 +3,7 @@ import { Router }           from '@angular/router-deprecated';
 import { HighlightDirective } from '../highlight.directive';
 
 @Component({
-  templateUrl: 'templates/examples.html',
+  templateUrl: 'app/examples/examples.html',
   directives: [HighlightDirective]
 })
 export class ExamplesComponent implements OnInit {

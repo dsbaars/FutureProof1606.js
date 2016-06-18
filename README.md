@@ -11,6 +11,12 @@ For me the following creates uncertainty:
 - I want to be ready for Bootstrap 4, and willing to ease the "transition" by already using SASS here
 - Want to be flexible using passport.js, but the default way of routing in express.js (and not separating application logic from route config) really bothers me.
 
+Suggestion: Hot Reloading
+-------------------------
+The systemjs-hot-reloader is amazingly fast but because it is not very stable yet, I did not add this directly.
+
+Check out the instructions [here](http://jspm.io/0.17-beta-guide/hot-reloading.html) and don't forget to disable browsersync in gulp.
+
 Features
 --------
 
